@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نمونه‌سوال‌های سواد رسانه‌ای</title>
+<style>
+:root{color-scheme:light dark;--bg:light-dark(#f5f7fb,#10141c);--panel:light-dark(#ffffff,#191f2b);--panel2:light-dark(#eef2f8,#222b3a);--text:light-dark(#1d2736,#edf2fb);--muted:light-dark(#64748b,#a6b2c6);--line:light-dark(#dce3ed,#303b4d);--accent:light-dark(#315fce,#8baaff);--accent2:light-dark(#e8efff,#27385d);--answer:light-dark(#f0f8f3,#1c3029);--answerline:light-dark(#cce7d5,#345a47)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,"Segoe UI",sans-serif;line-height:1.9}.app{min-height:100vh;background:var(--bg);border-radius:0}.hero{padding:36px 22px 28px;background:linear-gradient(125deg,light-dark(#e9efff,#1b2a48),light-dark(#f9fbff,#161d2b));border-bottom:1px solid var(--line)}.hero-inner{max-width:1080px;margin:auto}.eyebrow{font-size:.82rem;color:var(--accent);font-weight:bold;letter-spacing:.04em}.hero h1{font-size:clamp(1.6rem,4vw,2.5rem);margin:5px 0 8px;line-height:1.5}.hero p{margin:0;color:var(--muted)}.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:7px 13px;font-size:.88rem}.layout{max-width:1080px;margin:24px auto;padding:0 18px;display:grid;grid-template-columns:245px minmax(0,1fr);gap:20px;align-items:start}.sidebar,.reader{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden}.side-head{padding:16px 17px 8px;font-weight:bold}.lesson-list{padding:7px 10px 13px;display:grid;gap:7px}.lesson-btn{font:inherit;text-align:right;cursor:pointer;border:1px solid transparent;background:transparent;color:var(--text);border-radius:11px;padding:10px 12px;line-height:1.7}.lesson-btn:hover{background:var(--panel2)}.lesson-btn.active{background:var(--accent2);border-color:var(--accent);color:var(--accent);font-weight:bold}.lesson-btn small{display:block;color:var(--muted);font-size:.77rem}.tools{padding:15px;border-top:1px solid var(--line);display:grid;gap:10px}.search{width:100%;font:inherit;background:var(--bg);border:1px solid var(--line);color:var(--text);border-radius:11px;padding:10px 12px;outline:none}.search:focus{border-color:var(--accent)}.tool-row{display:flex;gap:8px;flex-wrap:wrap}.tool-btn{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:10px;padding:7px 10px;font-size:.86rem}.tool-btn:hover{border-color:var(--accent)}.reader-head{padding:20px 22px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.reader-head h2{font-size:1.25rem;margin:0}.count{color:var(--muted);font-size:.86rem}.questions{padding:12px 18px 22px}.question{padding:16px 4px;border-bottom:1px solid var(--line)}.question:last-child{border-bottom:0}.q-title{display:flex;align-items:flex-start;gap:10px;font-weight:bold;margin:0 0 11px}.number{flex:0 0 30px;height:30px;border-radius:9px;display:inline-grid;place-items:center;background:var(--accent2);color:var(--accent);font-size:.9rem}.answer{margin-right:40px;background:var(--answer);border:1px solid var(--answerline);border-radius:12px;padding:10px 13px;color:var(--text)}.answer strong{color:light-dark(#247346,#9be0b5)}.empty{text-align:center;padding:36px 10px;color:var(--muted)}.footer{text-align:center;color:var(--muted);font-size:.8rem;padding:5px 16px 28px}.hidden{display:none!important}@media(max-width:760px){.layout{grid-template-columns:1fr;margin-top:15px;padding:0 12px}.sidebar{position:static}.lesson-list{grid-template-columns:repeat(2,minmax(0,1fr))}.lesson-btn{font-size:.88rem}.tools{grid-template-columns:1fr}.hero{padding:25px 17px}.reader-head{padding:16px}.questions{padding:8px 13px 16px}.answer{margin-right:0}.q-title{gap:8px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="hero"><div class="hero-inner"><div class="eyebrow">دفتر مطالعه و مرور</div><h1>نمونه‌سوال‌های سواد رسانه‌ای</h1><p>سؤال‌ها و پاسخ‌ها را درس‌به‌درس بخوان و برای مرور سریع از جست‌وجو استفاده کن.</p><div class="stats"><span class="stat">۴ درس</span><span class="stat">۴۰ سؤال</span><span class="stat">پاسخ‌ها قابل نمایش و پنهان‌کردن</span></div></div></header>
+<main class="layout"><aside class="sidebar"><div class="side-head">فهرست درس‌ها</div><nav class="lesson-list" id="lessonList"></nav><div class="tools"><input class="search" id="search" type="search" placeholder="جست‌وجو در سؤال و پاسخ…" aria-label="جست‌وجو در سؤال و پاسخ"><div class="tool-row"><button class="tool-btn" id="toggleAnswers">پنهان‌کردن پاسخ‌ها</button><button class="tool-btn" id="resetSearch">پاک‌کردن جست‌وجو</button></div><div class="tool-row"><button class="tool-btn" id="smaller">A− کوچک‌تر</button><button class="tool-btn" id="larger">A+ بزرگ‌تر</button></div></div></aside>
+<section class="reader"><div class="reader-head"><h2 id="lessonTitle">درس اول: سواد رسانه‌ای</h2><span class="count" id="resultCount">۱۰ سؤال</span></div><div class="questions" id="questions"></div></section></main><footer class="footer">مطالعهٔ آرام، مرور منظم، یادگیری ماندگار</footer>
+</div>
+<script>
+const lessons = [
+{title:"درس اول: سواد رسانه‌ای",items:[
+["سواد چیست و چه مفهومی دارد؟","پاسخ: سواد مفهومی ثابت و ایستا نیست، بلکه پاسخی پویا به تحولات و نیازهای هر عصر است."],
+["اختراع چاپ چه تغییری در سواد ایجاد کرد؟","پاسخ: با اختراع چاپ، خواندن و نوشتن به نیاز اصلی جامعه تبدیل شد."],
+["با گسترش رسانه‌های جمعی، چه نوع سوادی اهمیت یافت؟","پاسخ: سواد رسانه‌ای برای تحلیل، ارزیابی و نقد پیام‌های رسانه‌ای اهمیت یافت."],
+["سواد رسانه‌ای چه کمکی به انسان می‌کند؟","پاسخ: به انسان کمک می‌کند پیام‌های رسانه‌ای را تحلیل، ارزیابی و نقد کند."],
+["سواد دیجیتال برای چه کارهایی ضروری است؟","پاسخ: برای جست‌وجو، ارزیابی اطلاعات، تولید محتوا و حضور مسئولانه در فضای مجازی."],
+["گسترش هوش مصنوعی چه نیازی را در انسان ایجاد کرده است؟","پاسخ: نیاز به یادگیری شایستگی‌های جدید برای زندگی در عصر جدید."],
+["اگر انسان مهارت‌ها و دانش خود را به‌روز نکند، چه اتفاقی می‌افتد؟","پاسخ: نمی‌تواند با پیشرفت فناوری‌های رسانه‌ای همگام شود و از تحولات جدید عقب می‌ماند."],
+["شرکت نورالینک چه زمانی تأسیس شد؟","پاسخ: در سال ۲۰۱۶ میلادی."],
+["مخاطب فعال چه ویژگی‌هایی دارد؟","پاسخ: هوشمند، خلاق، جست‌وجوگر و گزینشگر است و محتوای مناسب تولید می‌کند."],
+["هدف سواد رسانه‌ای چیست؟","پاسخ: تبدیل مخاطب منفعل به مخاطبی فعال، هوشمند، خلاق و گزینشگر."]]},
+{title:"درس دوم: متن و زیرمتن",items:[
+["متن چیست؟","پاسخ: پیام آشکار و عناصر مستقیم یک پیام رسانه‌ای را متن می‌نامند."],
+["زیرمتن چیست؟","پاسخ: پیام پنهان و غیرمستقیمی است که در زیر پیام آشکار قرار دارد."],
+["تفاوت متن و زیرمتن چیست؟","پاسخ: متن پیام آشکار و مستقیم است، اما زیرمتن پیام پنهان و غیرمستقیم است."],
+["چرا تصویر کوه یخی برای توضیح متن و زیرمتن استفاده می‌شود؟","پاسخ: زیرا بخش آشکار کوه مانند متن و بخش پنهان زیر آب مانند زیرمتن است."],
+["آیا متن فقط شامل نوشته‌هاست؟","پاسخ: خیر؛ متن می‌تواند شامل کلمات، صداها، تصاویر، نشانه‌ها و هر عنصر دیگری برای انتقال معنا باشد."],
+["متن یک فیلم شامل چه چیزهایی است؟","پاسخ: تصاویر، قاب‌بندی‌ها و حرکت‌هایی که دوربین ثبت می‌کند."],
+["زیرمتن چگونه در یک اثر رسانه‌ای ایجاد می‌شود؟","پاسخ: با استفاده هدفمند از فنون اثرگذاری مانند کلام، نور، رنگ، موسیقی و تدوین."],
+["آیا زیرمتن همیشه عمدی است؟","پاسخ: خیر؛ زیرمتن ممکن است آگاهانه یا ناآگاهانه و خواسته یا ناخواسته ایجاد شود."],
+["مخاطب در درک متن و زیرمتن چه نقشی دارد؟","پاسخ: مخاطب در فهم معنا مشارکت می‌کند و نباید صرفاً منفعل باشد."],
+["معمولاً چه کسانی زیرمتن را در رسانه‌ها ایجاد می‌کنند؟","پاسخ: سازندگان پیام، مانند تولیدکنندگان فیلم و سریال، شرکت‌های تبلیغاتی و رسانه‌های خبری."]]},
+{title:"درس سوم: پنج پرسش کلیدی سواد رسانه‌ای",items:[
+["رسانه‌ها چند نوع مخاطب دارند و نام آن‌ها چیست؟","جواب: رسانه‌ها دو نوع مخاطب دارند: مخاطب فعال و مخاطب منفعل."],
+["تفاوت مخاطب فعال و مخاطب منفعل چیست؟","جواب: مخاطب فعال پیام را با دقت بررسی و تحلیل می‌کند، اما مخاطب منفعل پیام را بدون بررسی و تفکر می‌پذیرد."],
+["سواد رسانه‌ای بر فعال بودن چه کسانی تأکید دارد؟","جواب: بر فعال بودن مخاطبان و تبدیل مصرف‌کنندگان به تولیدکنندگان خلاق تأکید دارد."],
+["پنج پرسش کلیدی سواد رسانه‌ای را نام ببرید.","جواب:\n1. چه کسی این پیام را تولید کرده است؟\n2. چرا این پیام فرستاده شده است؟\n3. از چه روش‌هایی برای جلب توجه مخاطب استفاده شده است؟\n4. چطور افراد مختلف این پیام را متفاوت درک می‌کنند؟\n5. چه سبک زندگی، ارزش‌ها و نظریاتی در این پیام ارائه شده یا حذف شده است؟"],
+["منظور از پرسش «چه کسی این پیام را تولید کرده است؟» چیست؟","جواب: شناسایی فرستنده و مؤلف پیام رسانه‌ای."],
+["چرا باید دربارهٔ هدف و انگیزهٔ فرستندهٔ پیام سؤال کنیم؟","جواب: برای اینکه بدانیم پیام با چه هدف و انگیزه‌ای تولید و ارسال شده است."],
+["منظور از قالب و فنون در پیام‌های رسانه‌ای چیست؟","جواب: روش‌ها و شیوه‌هایی که برای ارائهٔ پیام و جلب توجه مخاطب استفاده می‌شوند."],
+["پرسش «چطور افراد مختلف این پیام را متفاوت درک می‌کنند؟» به کدام بخش مربوط است؟","جواب: به مخاطبان یا گیرندگان پیام مربوط است."],
+["متن و زیرمتن یک برنامهٔ تلویزیونی چه مفهومی دارند؟","جواب: متن، پیام آشکار برنامه است و زیرمتن، مفاهیم و پیام‌های پنهان یا غیرمستقیم آن است."],
+["چرا یادگیری و تقویت سواد رسانه‌ای به تمرین مستمر نیاز دارد؟","جواب: زیرا سواد رسانه‌ای مانند مهارت‌هایی مثل رانندگی و شنا، با تمرین مرتب تقویت می‌شود و باعث افزایش توانایی تحلیل پیام‌ها می‌گردد."]]},
+{title:"درس چهارم: تصاویر بی‌طرف نیستند",items:[
+["بازنمایی چیست؟","جواب: بازنمایی یعنی نشان دادن واقعیت به شکلی خاص."],
+["چرا تصاویر رسانه‌ای همیشه بی‌طرف نیستند؟","جواب: زیرا رسانه‌ها با انتخاب، حذف یا دستکاری بخش‌هایی از واقعیت می‌توانند بر دیدگاه و قضاوت مخاطبان تأثیر بگذارند."],
+["وظیفهٔ مخاطب فعال در برابر بازنمایی‌های رسانه‌ای چیست؟","جواب: کشف تفاوت میان واقعیت و بازنمایی‌های رسانه‌ای با هوشمندی و نگاه نقادانه."],
+["آیا بازنمایی همیشه به معنای تحریف واقعیت است؟","جواب: خیر؛ بازنمایی یعنی ارائهٔ واقعیت از زاویه‌ای خاص و لزوماً به معنای تحریف آن نیست."],
+["بازنمایی چه تأثیری می‌تواند داشته باشد؟","جواب: می‌تواند تأثیر مثبت یا منفی بر مخاطبان داشته باشد."],
+["بازنمایی فقط در رسانه‌های رسمی اتفاق می‌افتد؟","جواب: خیر؛ کاربران شبکه‌های اجتماعی نیز با انتخاب و انتشار بخش‌هایی از زندگی خود بازنمایی می‌کنند."],
+["منظور از «زندگی برشی» در شبکه‌های اجتماعی چیست؟","جواب: انتشار گزینشی بخش‌های شاد و جذاب زندگی و پنهان کردن غم‌ها، مشکلات و شکست‌ها."],
+["منظور از تصویرسازی ملی چیست؟","جواب: سیاست‌ها و برنامه‌هایی که یک کشور برای معرفی تصویری مطلوب از خود در سطح جهانی طراحی می‌کند."],
+["کشورها چرا به تصویرسازی ملی اهمیت می‌دهند؟","جواب: برای معرفی ظرفیت‌ها و دستاوردهای خود، جذب گردشگر و شکل دادن به نگرش دیگر کشورها نسبت به خود."],
+["چرا مقایسهٔ منابع مختلف رسانه‌ای اهمیت دارد؟","جواب: زیرا به مخاطب کمک می‌کند دیدگاهی جامع‌تر و کامل‌تر دربارهٔ یک موضوع پیدا کند و تحت تأثیر یک بازنمایی یک‌جانبه قرار نگیرد."]]}
+];
+let activeLesson=0, answersVisible=true, fontSize=16;
+const list=document.getElementById('lessonList'), questions=document.getElementById('questions'), search=document.getElementById('search');
+function renderNav(){list.innerHTML='';lessons.forEach((lesson,i)=>{const b=document.createElement('button');b.className='lesson-btn'+(i===activeLesson?' active':'');b.innerHTML=`${lesson.title}<small>${lesson.items.length} سؤال</small>`;b.onclick=()=>{activeLesson=i;renderNav();renderQuestions()};list.appendChild(b)})}
+function renderQuestions(){const lesson=lessons[activeLesson];document.getElementById('lessonTitle').textContent=lesson.title;const term=search.value.trim().toLocaleLowerCase('fa');const matches=lesson.items.map((item,i)=>({item,i})).filter(({item})=>!term||(item[0]+' '+item[1]).toLocaleLowerCase('fa').includes(term));document.getElementById('resultCount').textContent=`${matches.length} سؤال از ${lesson.items.length}`;questions.innerHTML='';if(!matches.length){questions.innerHTML='<div class="empty">موردی پیدا نشد. عبارت دیگری را جست‌وجو کن.</div>';return}matches.forEach(({item,i})=>{const article=document.createElement('article');article.className='question';const title=document.createElement('p');title.className='q-title';const num=document.createElement('span');num.className='number';num.textContent=i+1;const text=document.createElement('span');text.textContent=item[0];title.append(num,text);article.appendChild(title);const answer=document.createElement('div');answer.className='answer'+(!answersVisible?' hidden':'');const strong=document.createElement('strong');strong.textContent=item[1].startsWith('پاسخ:')?'پاسخ:':'جواب:';const content=document.createElement('span');content.textContent=item[1].replace(/^(پاسخ:|جواب:)\s*/, '');content.style.whiteSpace='pre-line';answer.append(strong,document.createTextNode(' '),content);article.appendChild(answer);questions.appendChild(article)});questions.style.fontSize=fontSize+'px';document.getElementById('toggleAnswers').textContent=answersVisible?'پنهان‌کردن پاسخ‌ها':'نمایش پاسخ‌ها'}
+search.addEventListener('input',renderQuestions);document.getElementById('toggleAnswers').onclick=()=>{answersVisible=!answersVisible;renderQuestions()};document.getElementById('resetSearch').onclick=()=>{search.value='';renderQuestions();search.focus()};document.getElementById('larger').onclick=()=>{fontSize=Math.min(22,fontSize+1);renderQuestions()};document.getElementById('smaller').onclick=()=>{fontSize=Math.max(13,fontSize-1);renderQuestions()};renderNav();renderQuestions();
+</script>
+</body>
+</html>
